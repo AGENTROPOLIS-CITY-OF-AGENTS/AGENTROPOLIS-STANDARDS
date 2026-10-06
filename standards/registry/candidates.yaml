@@ -1,0 +1,227 @@
+# APS Candidate Registry
+# Candidate IDs are provisional and are NOT APS numbers.
+snapshot_date: "2026-10-06"
+candidate_count: 43
+policy: "Every active public repository is a standardization candidate until reviewed and classified."
+maturity_levels:
+  C0: DISCOVERY
+  C1: CANDIDATE
+  C2: DRAFTABLE
+  C3: STANDARDS_READY
+  C4: EXTERNAL_CANDIDATE
+candidates:
+  - candidate_id: CAND-0001
+    repository: "AGENTROPOLIS-CITY-OF-AGENTS/AGENTROPOCALYPSE"
+    maturity: C0
+    status: candidate
+    external_target: TBD
+  - candidate_id: CAND-0002
+    repository: "AGENTROPOLIS-CITY-OF-AGENTS/AGENTROPOLIS-33.3FM"
+    maturity: C1
+    status: candidate
+    external_target: TBD
+  - candidate_id: CAND-0003
+    repository: "AGENTROPOLIS-CITY-OF-AGENTS/AGENTROPOLIS-33.3FM-DOGECHAIN"
+    maturity: C0
+    status: candidate
+    external_target: TBD
+  - candidate_id: CAND-0004
+    repository: "AGENTROPOLIS-CITY-OF-AGENTS/AGENTROPOLIS-54GHOSTS"
+    maturity: C0
+    status: candidate
+    external_target: TBD
+  - candidate_id: CAND-0005
+    repository: "AGENTROPOLIS-CITY-OF-AGENTS/AGENTROPOLIS-54GHOSTs2"
+    maturity: C0
+    status: candidate
+    external_target: TBD
+  - candidate_id: CAND-0006
+    repository: "AGENTROPOLIS-CITY-OF-AGENTS/AGENTROPOLIS-AGENT-MCP"
+    maturity: C2
+    status: candidate
+    external_target: TBD
+  - candidate_id: CAND-0007
+    repository: "AGENTROPOLIS-CITY-OF-AGENTS/AGENTROPOLIS-AI-OPS"
+    maturity: C1
+    status: candidate
+    external_target: TBD
+  - candidate_id: CAND-0008
+    repository: "AGENTROPOLIS-CITY-OF-AGENTS/AGENTROPOLIS-ASIMOV"
+    maturity: C1
+    status: candidate
+    external_target: TBD
+  - candidate_id: CAND-0009
+    repository: "AGENTROPOLIS-CITY-OF-AGENTS/AGENTROPOLIS-ATG"
+    maturity: C2
+    status: candidate
+    external_target: TBD
+  - candidate_id: CAND-0010
+    repository: "AGENTROPOLIS-CITY-OF-AGENTS/AGENTROPOLIS-ATLAS"
+    maturity: C1
+    status: candidate
+    external_target: TBD
+  - candidate_id: CAND-0011
+    repository: "AGENTROPOLIS-CITY-OF-AGENTS/AGENTROPOLIS-BUZZ"
+    maturity: C1
+    status: candidate
+    external_target: TBD
+  - candidate_id: CAND-0012
+    repository: "AGENTROPOLIS-CITY-OF-AGENTS/AGENTROPOLIS-CAPITAL-ATLAS"
+    maturity: C0
+    status: candidate
+    external_target: TBD
+  - candidate_id: CAND-0013
+    repository: "AGENTROPOLIS-CITY-OF-AGENTS/AGENTROPOLIS-CHAOS-RANK"
+    maturity: C1
+    status: candidate
+    external_target: TBD
+  - candidate_id: CAND-0014
+    repository: "AGENTROPOLIS-CITY-OF-AGENTS/AGENTROPOLIS-EPD"
+    maturity: C1
+    status: candidate
+    external_target: TBD
+  - candidate_id: CAND-0015
+    repository: "AGENTROPOLIS-CITY-OF-AGENTS/AGENTROPOLIS-FIN54"
+    maturity: C1
+    status: candidate
+    external_target: TBD
+  - candidate_id: CAND-0016
+    repository: "AGENTROPOLIS-CITY-OF-AGENTS/AGENTROPOLIS-GAMING-DISTRICT-NEURO-ON-CHAIN"
+    maturity: C0
+    status: candidate
+    external_target: TBD
+  - candidate_id: CAND-0017
+    repository: "AGENTROPOLIS-CITY-OF-AGENTS/AGENTROPOLIS-GAMING-DISTRICT-NKTO2020-KILO-BUILD"
+    maturity: C0
+    status: candidate
+    external_target: TBD
+  - candidate_id: CAND-0018
+    repository: "AGENTROPOLIS-CITY-OF-AGENTS/AGENTROPOLIS-GREENRAIL-"
+    maturity: C0
+    status: candidate
+    external_target: TBD
+  - candidate_id: CAND-0019
+    repository: "AGENTROPOLIS-CITY-OF-AGENTS/AGENTROPOLIS-GREENRAILS"
+    maturity: C1
+    status: candidate
+    external_target: TBD
+  - candidate_id: CAND-0020
+    repository: "AGENTROPOLIS-CITY-OF-AGENTS/AGENTROPOLIS-GooGle-backend"
+    maturity: C0
+    status: candidate
+    external_target: TBD
+  - candidate_id: CAND-0021
+    repository: "AGENTROPOLIS-CITY-OF-AGENTS/AGENTROPOLIS-HERMES-ANDROID"
+    maturity: C1
+    status: candidate
+    external_target: TBD
+  - candidate_id: CAND-0022
+    repository: "AGENTROPOLIS-CITY-OF-AGENTS/AGENTROPOLIS-MRKT-CMD"
+    maturity: C1
+    status: candidate
+    external_target: TBD
+  - candidate_id: CAND-0023
+    repository: "AGENTROPOLIS-CITY-OF-AGENTS/AGENTROPOLIS-N3"
+    maturity: C0
+    status: candidate
+    external_target: TBD
+  - candidate_id: CAND-0024
+    repository: "AGENTROPOLIS-CITY-OF-AGENTS/AGENTROPOLIS-OFFGRID-PUB"
+    maturity: C1
+    status: candidate
+    external_target: TBD
+  - candidate_id: CAND-0025
+    repository: "AGENTROPOLIS-CITY-OF-AGENTS/AGENTROPOLIS-ONTOLOGY"
+    maturity: C2
+    status: candidate
+    external_target: TBD
+  - candidate_id: CAND-0026
+    repository: "AGENTROPOLIS-CITY-OF-AGENTS/AGENTROPOLIS-PAY-PROTOCOL"
+    maturity: C3
+    status: candidate
+    external_target: TBD
+  - candidate_id: CAND-0027
+    repository: "AGENTROPOLIS-CITY-OF-AGENTS/AGENTROPOLIS-PAYRAIL"
+    maturity: C1
+    status: candidate
+    external_target: TBD
+  - candidate_id: CAND-0028
+    repository: "AGENTROPOLIS-CITY-OF-AGENTS/AGENTROPOLIS-PBX"
+    maturity: C0
+    status: candidate
+    external_target: TBD
+  - candidate_id: CAND-0029
+    repository: "AGENTROPOLIS-CITY-OF-AGENTS/AGENTROPOLIS-PUBLIC-IP-DISTRICT"
+    maturity: C1
+    status: candidate
+    external_target: TBD
+  - candidate_id: CAND-0030
+    repository: "AGENTROPOLIS-CITY-OF-AGENTS/AGENTROPOLIS-SOVEREIGNTY"
+    maturity: C2
+    status: candidate
+    external_target: TBD
+  - candidate_id: CAND-0031
+    repository: "AGENTROPOLIS-CITY-OF-AGENTS/AGENTROPOLIS-TRVL-DSTRT"
+    maturity: C1
+    status: candidate
+    external_target: TBD
+  - candidate_id: CAND-0032
+    repository: "AGENTROPOLIS-CITY-OF-AGENTS/CREATOR-Universal-Lore-Engine"
+    maturity: C0
+    status: candidate
+    external_target: TBD
+  - candidate_id: CAND-0033
+    repository: "AGENTROPOLIS-CITY-OF-AGENTS/HERMES-CITY"
+    maturity: C2
+    status: candidate
+    external_target: TBD
+  - candidate_id: CAND-0034
+    repository: "AGENTROPOLIS-CITY-OF-AGENTS/WCM-HERMES-BLUEPRINT"
+    maturity: C1
+    status: candidate
+    external_target: TBD
+  - candidate_id: CAND-0035
+    repository: "AGENTROPOLIS-CITY-OF-AGENTS/WIRED-CHAOS-GTM"
+    maturity: C2
+    status: candidate
+    external_target: TBD
+  - candidate_id: CAND-0036
+    repository: "wiredchaos/CODEX"
+    maturity: C1
+    status: candidate
+    external_target: TBD
+  - candidate_id: CAND-0037
+    repository: "wiredchaos/NPC"
+    maturity: C0
+    status: candidate
+    external_target: TBD
+  - candidate_id: CAND-0038
+    repository: "wiredchaos/PTS"
+    maturity: C0
+    status: candidate
+    external_target: TBD
+  - candidate_id: CAND-0039
+    repository: "wiredchaos/dyad"
+    maturity: C0
+    status: candidate
+    external_target: TBD
+  - candidate_id: CAND-0040
+    repository: "wiredchaos/dyad33.3"
+    maturity: C0
+    status: candidate
+    external_target: TBD
+  - candidate_id: CAND-0041
+    repository: "wiredchaos/dyadcitiz3n.h3x"
+    maturity: C0
+    status: candidate
+    external_target: TBD
+  - candidate_id: CAND-0042
+    repository: "wiredchaos/hood-oracle-lenses"
+    maturity: C0
+    status: candidate
+    external_target: TBD
+  - candidate_id: CAND-0043
+    repository: "AGENTROPOLIS-CITY-OF-AGENTS/AGENTROPOLIS-STANDARDS"
+    maturity: C1
+    status: candidate
+    external_target: TBD
