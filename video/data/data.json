@@ -1,0 +1,29 @@
+{
+  "project": "AGENTROPOLIS Protocol Standards",
+  "status": "bootstrap",
+  "candidate_count": 43,
+  "maturity_model": ["C0 DISCOVERY", "C1 CANDIDATE", "C2 DRAFTABLE", "C3 STANDARDS READY", "C4 EXTERNAL CANDIDATE"],
+  "hero_statement": "Protocols become standards.",
+  "lifecycle": ["Protocol", "Candidate", "Specification", "Conformance", "Independent implementation", "APS Final"],
+  "first_wave": [
+    {"name":"Agent Payment","source":"AGENTROPOLIS-PAY-PROTOCOL","maturity":"C3"},
+    {"name":"Identity + Delegation","source":"AGENTROPOLIS-SOVEREIGNTY","maturity":"C2"},
+    {"name":"MCP Authority","source":"AGENTROPOLIS-AGENT-MCP","maturity":"C2"},
+    {"name":"ATG","source":"AGENTROPOLIS-ATG","maturity":"C2"},
+    {"name":"Ontology","source":"AGENTROPOLIS-ONTOLOGY","maturity":"C2"},
+    {"name":"UGC / GTM","source":"WIRED-CHAOS-GTM","maturity":"C2"},
+    {"name":"Runtime Handoff","source":"HERMES-CITY","maturity":"C2"},
+    {"name":"Public IP","source":"AGENTROPOLIS-PUBLIC-IP-DISTRICT","maturity":"C1"}
+  ],
+  "governance_lines": [
+    "Public repository != standard",
+    "Identity != authority",
+    "Execution != evidence",
+    "Signal != order"
+  ],
+  "photogrammetry_claim": {
+    "classical_photogrammetry_available": false,
+    "reason": "No multi-view calibrated capture source is committed to this repository.",
+    "allowed_current_spatial_mode": "procedural browser 3D"
+  }
+}
