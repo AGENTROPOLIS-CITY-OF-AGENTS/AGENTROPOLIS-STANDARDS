@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
   <meta name="theme-color" content="#000000">
-  <meta name="description" content="AGENTROPOLIS Protocol Standards — the 3D standards authority for accountable autonomous agents.">
+  <meta name="description" content="AGENTROPOLIS Protocol Standards — proven protocols become implementation-neutral, testable standards.">
   <title>AGENTROPOLIS · Protocol Standards</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -20,104 +20,110 @@
   </script>
 </head>
 <body>
-  <div class="scan" aria-hidden="true"></div>
-
-  <header class="top-hud">
-    <a class="brand-lockup" href="./" aria-label="AGENTROPOLIS Standards home">
+  <header class="site-header">
+    <a class="brand" href="./" aria-label="AGENTROPOLIS Standards home">
       <span class="brand-mark">A</span>
-      <span class="brand-copy">
+      <span>
         <strong>AGENTROPOLIS</strong>
-        <small>PROTOCOL STANDARDS · INTELLIGENCE GRID</small>
+        <small>PROTOCOL STANDARDS</small>
       </span>
     </a>
-
-    <div class="hud-center">
-      <span class="live-dot"></span>
-      <span>STANDARDS AUTHORITY ONLINE</span>
-      <span class="sep">/</span>
-      <span id="candidate-count">43 CANDIDATES</span>
-    </div>
-
-    <div class="compute" role="tablist" aria-label="Adaptive experience tier">
-      <button type="button" data-tier="full">FULL</button>
-      <button type="button" data-tier="adaptive">ADAPT</button>
-      <button type="button" data-tier="lite">LITE</button>
-      <button type="button" data-tier="minimum">MIN</button>
-    </div>
+    <nav aria-label="Primary navigation">
+      <a href="#explainer">Explainer</a>
+      <a href="#standards">Standards</a>
+      <button type="button" class="nav-button" data-open-district>Explore 3D</button>
+      <a href="https://github.com/AGENTROPOLIS-CITY-OF-AGENTS/AGENTROPOLIS-STANDARDS">GitHub</a>
+    </nav>
   </header>
 
-  <main id="stage" class="stage">
-    <canvas id="gl" aria-label="3D AGENTROPOLIS standards district"></canvas>
-    <section id="minimum-map" class="minimum-map" hidden aria-label="Standards district map"></section>
-
-    <div class="layer-pill">
-      <span>WORLD GRID</span>
-      <b>→</b>
-      <span>STANDARDS DISTRICT</span>
-      <b>→</b>
-      <strong id="place-label">APS REGISTRY</strong>
-    </div>
-
-    <aside class="district-rail" aria-label="Standards landmarks">
-      <button class="rail-btn active" data-focus="registry"><span>00</span><b>Registry</b></button>
-      <button class="rail-btn" data-focus="pay"><span>01</span><b>Pay</b></button>
-      <button class="rail-btn" data-focus="identity"><span>02</span><b>Identity</b></button>
-      <button class="rail-btn" data-focus="mcp"><span>03</span><b>MCP</b></button>
-      <button class="rail-btn" data-focus="atg"><span>04</span><b>ATG</b></button>
-      <button class="rail-btn" data-focus="ontology"><span>05</span><b>Ontology</b></button>
-      <button class="rail-btn" data-focus="gtm"><span>06</span><b>UGC/GTM</b></button>
-      <button class="rail-btn" data-focus="hermes"><span>07</span><b>Hermes</b></button>
-      <button class="rail-btn" data-focus="ip"><span>08</span><b>Public IP</b></button>
-    </aside>
-
-    <section class="authority-card" id="authority-card" aria-live="polite">
-      <div class="card-head">
-        <div>
-          <p class="eyebrow" id="detail-kicker">CENTRAL AUTHORITY</p>
-          <h1 id="detail-title">APS REGISTRY</h1>
-        </div>
-        <span class="maturity neutral" id="detail-maturity">CANON</span>
+  <main>
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-media" aria-hidden="true">
+        <video id="hero-video" muted loop playsinline preload="metadata"></video>
+        <div class="hero-fallback"></div>
+        <div class="hero-grid"></div>
       </div>
-      <p class="detail-copy" id="detail-copy">
-        The canonical registry that turns working AGENTROPOLIS protocols into implementation-neutral specifications, conformance tests and interoperable standards.
-      </p>
-      <dl class="facts">
-        <div><dt>SOURCE</dt><dd id="detail-source">AGENTROPOLIS-STANDARDS</dd></div>
-        <div><dt>ROLE</dt><dd id="detail-role">Standards authority</dd></div>
-        <div><dt>PATH</dt><dd id="detail-path">Protocol → APS → Conformance</dd></div>
-      </dl>
-      <div class="card-actions">
-        <a id="detail-link" class="trace primary" href="https://github.com/AGENTROPOLIS-CITY-OF-AGENTS/AGENTROPOLIS-STANDARDS/tree/main/standards">OPEN SPEC</a>
-        <a class="trace" href="https://github.com/AGENTROPOLIS-CITY-OF-AGENTS/AGENTROPOLIS-STANDARDS">REPOSITORY</a>
+      <div class="hero-shade"></div>
+      <div class="hero-copy">
+        <p class="eyebrow">AGENTROPOLIS // STANDARDS DISTRICT</p>
+        <h1 id="hero-title">Protocols become standards.</h1>
+        <p class="hero-deck">Proven operating rules become public, implementation-neutral specifications with conformance tests, reference implementations and independent verification.</p>
+        <div class="hero-actions">
+          <a class="button primary" href="#explainer">Watch the explainer</a>
+          <button type="button" class="button ghost" data-open-district>Explore the 3D district</button>
+        </div>
+        <p class="hero-rule">Identity ≠ Authority · Execution ≠ Evidence · Signal ≠ Order</p>
+      </div>
+      <a class="scroll-cue" href="#explainer">SCROLL TO EXPLAINER ↓</a>
+    </section>
+
+    <section id="explainer" class="section explainer">
+      <div class="section-copy">
+        <p class="eyebrow">60 SECOND EXPLAINER</p>
+        <h2>From internal protocol to public standard.</h2>
+        <p>AGENTROPOLIS does not call every repository a standard. Public repositories enter as candidates. Reusable rules are extracted, specified, tested and independently implementable before they graduate.</p>
+      </div>
+      <div class="video-shell">
+        <video id="explainer-video" controls playsinline preload="metadata"></video>
+        <div class="video-fallback" id="explainer-fallback">
+          <span class="play-glyph">▶</span>
+          <strong>EXPLAINER IN PRODUCTION</strong>
+          <small>Built through the governed reference → data → story → motion → direction → ship pipeline.</small>
+        </div>
+      </div>
+      <div class="three-beats" aria-label="Explainer beats">
+        <article><span>01</span><h3>Extract</h3><p>Find the reusable rule inside a working protocol.</p></article>
+        <article><span>02</span><h3>Specify</h3><p>Separate semantics from product UI, vendor and runtime.</p></article>
+        <article><span>03</span><h3>Prove</h3><p>Conformance, reference implementation and independent implementation.</p></article>
       </div>
     </section>
 
-    <section class="status-console">
-      <div class="console-head">
-        <span class="avatar-orb" aria-hidden="true"></span>
-        <div>
-          <p>AXIOM · STANDARDS NAVIGATOR</p>
-          <strong id="navigator-line">Select a standards tower to inspect its maturity, source and interoperability path.</strong>
-        </div>
+    <section id="standards" class="section standards">
+      <div class="section-copy narrow">
+        <p class="eyebrow">FIRST EXTRACTION WAVE</p>
+        <h2>One district. Clear lanes.</h2>
+        <p>Dense details stay out of the first paint. Open a standard when you need the evidence.</p>
       </div>
-      <div class="law-grid">
-        <span>IDENTITY ≠ AUTHORITY</span>
-        <span>EXECUTION ≠ EVIDENCE</span>
-        <span>SIGNAL ≠ ORDER</span>
+      <div class="standards-grid">
+        <a class="standard-card c3" href="https://github.com/AGENTROPOLIS-CITY-OF-AGENTS/AGENTROPOLIS-PAY-PROTOCOL"><span>C3</span><h3>Agent Payment</h3><p>Intent → policy → approval → settlement → receipt.</p></a>
+        <a class="standard-card c2" href="https://github.com/AGENTROPOLIS-CITY-OF-AGENTS/AGENTROPOLIS-SOVEREIGNTY"><span>C2</span><h3>Identity + Delegation</h3><p>Root identity, delegation, mandate and signed evidence.</p></a>
+        <a class="standard-card c2" href="https://github.com/AGENTROPOLIS-CITY-OF-AGENTS/AGENTROPOLIS-AGENT-MCP"><span>C2</span><h3>MCP Authority</h3><p>Capability, permission, tool execution and receipts.</p></a>
+        <a class="standard-card c2" href="https://github.com/AGENTROPOLIS-CITY-OF-AGENTS/AGENTROPOLIS-ATG"><span>C2</span><h3>ATG</h3><p>Portable semantics for mandates, capabilities and evidence.</p></a>
+        <a class="standard-card c2" href="https://github.com/AGENTROPOLIS-CITY-OF-AGENTS/AGENTROPOLIS-ONTOLOGY"><span>C2</span><h3>Ontology</h3><p>Shared entities, relationships, permissions and audit semantics.</p></a>
+        <a class="standard-card c2" href="https://github.com/AGENTROPOLIS-CITY-OF-AGENTS/WIRED-CHAOS-GTM"><span>C2</span><h3>UGC / GTM</h3><p>Rights → mandate → publish → attribute → compensate → receipt.</p></a>
+        <a class="standard-card c2" href="https://github.com/AGENTROPOLIS-CITY-OF-AGENTS/HERMES-CITY"><span>C2</span><h3>Runtime Handoff</h3><p>Spawn, context, capability transfer and continuity.</p></a>
+        <a class="standard-card c1" href="https://github.com/AGENTROPOLIS-CITY-OF-AGENTS/AGENTROPOLIS-PUBLIC-IP-DISTRICT"><span>C1</span><h3>Public IP</h3><p>Creation, ownership, license and distribution authority.</p></a>
       </div>
     </section>
 
-    <div class="scene-legend" aria-hidden="true">
-      <span><i class="cyan-dot"></i>C2 DRAFTABLE</span>
-      <span><i class="lime-dot"></i>C3 STANDARDS READY</span>
-      <span><i class="red-dot"></i>C1 CANDIDATE</span>
-    </div>
+    <section class="section corridor">
+      <p class="eyebrow">APS LIFECYCLE</p>
+      <div class="corridor-line" aria-label="Standards lifecycle">
+        <span>Protocol</span><i>→</i><span>Candidate</span><i>→</i><span>Specification</span><i>→</i><span>Conformance</span><i>→</i><span>Independent implementation</span><i>→</i><span>APS Final</span>
+      </div>
+      <div class="closing-actions">
+        <button type="button" class="button primary" data-open-district>Enter the Standards District</button>
+        <a class="button ghost" href="https://github.com/AGENTROPOLIS-CITY-OF-AGENTS/AGENTROPOLIS-STANDARDS/tree/main/standards">Read the specs</a>
+      </div>
+    </section>
   </main>
 
-  <footer class="bottom-hud">
-    <span>ARCHITECTURE → PROTOCOL → SPECIFICATION → CONFORMANCE → INTEROPERABILITY</span>
-    <a href="https://github.com/AGENTROPOLIS-CITY-OF-AGENTS/AGENTROPOLIS-STANDARDS">VIEW SOURCE</a>
-    <span>PUBLIC REPOSITORY = STANDARDIZATION CANDIDATE</span>
+  <dialog id="district-dialog" class="district-dialog" aria-label="3D Standards District">
+    <div class="district-header">
+      <div>
+        <p class="eyebrow">INTENT-GATED SPATIAL MODE</p>
+        <strong>STANDARDS DISTRICT</strong>
+      </div>
+      <button type="button" class="close-district" data-close-district aria-label="Close 3D district">×</button>
+    </div>
+    <div id="district-root" class="district-root">
+      <div class="district-loading">Initializing spatial district…</div>
+    </div>
+  </dialog>
+
+  <footer>
+    <span>AGENTROPOLIS PROTOCOL STANDARDS</span>
+    <span>Same intelligence. Same meaning. Same authority. Different computational weight.</span>
   </footer>
 
   <script type="module" src="./app.js"></script>
