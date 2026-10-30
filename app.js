@@ -146,51 +146,114 @@ async function mountDistrict(root) {
       scene.add(road);
     }
 
+    // Explicit street furniture and district walkways. Decorative only: no fake entries.
+    const walkwayMaterial=new THREE.MeshStandardMaterial({color:0x182831,metalness:.3,roughness:.75});
+    const stripeMaterial=new THREE.MeshBasicMaterial({color:0x18b9c7});
+    const paths=[[-16,-11,16,-11],[-16,2,16,2],[-16,13,16,13]];
+    for(const [x1,z1,x2,z2] of paths){
+      const length=Math.hypot(x2-x1,z2-z1);
+      const pavement=new THREE.Mesh(new THREE.BoxGeometry(length,.11,1.7),walkwayMaterial);
+      pavement.position.set((x1+x2)/2,.085,(z1+z2)/2);
+      scene.add(pavement);
+      const stripe=new THREE.Mesh(new THREE.BoxGeometry(length,.018,.03),stripeMaterial);
+      stripe.position.set(pavement.position.x,.15,pavement.position.z);
+      scene.add(stripe);
+    }
+    for(let x=-28;x<=28;x+=8){
+      const pole=new THREE.Mesh(new THREE.CylinderGeometry(.075,.105,3.2,8),steelMaterial);
+      pole.position.set(x,1.7,-23);
+      scene.add(pole);
+      const lamp=new THREE.Mesh(new THREE.BoxGeometry(.7,.12,.2),new THREE.MeshBasicMaterial({color:0x18b9c7}));
+      lamp.position.set(x,3.3,-23);
+      scene.add(lamp);
+    }
+
     const city = new Map();
     const ray = new THREE.Raycaster();
     const pointer = new THREE.Vector2();
 
+    const facadeMaterial = new THREE.MeshStandardMaterial({color:0x101b24,metalness:.76,roughness:.32});
+    const steelMaterial = new THREE.MeshStandardMaterial({color:0x223642,metalness:.88,roughness:.26});
+    const glassMaterial = new THREE.MeshPhysicalMaterial({color:0x173b49,metalness:.35,roughness:.14,transparent:true,opacity:.9,clearcoat:1});
+    const pavementMaterial = new THREE.MeshStandardMaterial({color:0x0b131b,metalness:.18,roughness:.83});
+    const lintelMaterial = new THREE.MeshStandardMaterial({color:0x081018,metalness:.7,roughness:.3});
+    const facadeGeo = new THREE.BoxGeometry(1,1,1);
+
+    function solid(group, material, w, h, d, x, y, z) {
+      const mesh = new THREE.Mesh(facadeGeo, material);
+      mesh.position.set(x,y,z);
+      mesh.scale.set(w,h,d);
+      mesh.castShadow = true;
+      mesh.receiveShadow = true;
+      group.add(mesh);
+      return mesh;
+    }
+
     function makeTower(item) {
       const g = new THREE.Group();
       const [w,h,d] = item.size;
-      const color = new THREE.Color(item.color);
-      const mat = new THREE.MeshLambertMaterial({color:0x071019,emissive:color,emissiveIntensity:item.id==="registry"?.14:.05});
-      const body = new THREE.Mesh(new THREE.BoxGeometry(w,h*.7,d),mat);
-      body.position.y = h*.35;
-      g.add(body);
+      const accent = new THREE.Color(item.color);
+      const accentMat = new THREE.MeshStandardMaterial({color:accent,emissive:accent,emissiveIntensity:.28,metalness:.66,roughness:.27});
+      const bodyMat = facadeMaterial.clone();
+      bodyMat.emissive = accent.clone();
+      bodyMat.emissiveIntensity = .025;
+      const bodyHeight = h*.78;
+      const base = solid(g,pavementMaterial,w+2.8,.42,d+2.8,0,.21,0);
+      base.receiveShadow = true;
+      solid(g,bodyMat,w,bodyHeight,d,0,.42+bodyHeight/2,0);
+      solid(g,steelMaterial,w+1,.26,d+1,0,.58,0);
+      solid(g,steelMaterial,w+.8,.34,d+.8,0,.42+bodyHeight,0);
+      solid(g,lintelMaterial,w*.77,.65,d*.77,0,.9+bodyHeight,0);
 
-      const edge = new THREE.LineSegments(
-        new THREE.EdgesGeometry(new THREE.BoxGeometry(w,h*.7,d)),
-        new THREE.LineBasicMaterial({color:item.color,transparent:true,opacity:.58})
-      );
-      edge.position.y = h*.35;
-      g.add(edge);
-
-      const cap = new THREE.Mesh(
-        new THREE.BoxGeometry(w*.68,Math.max(1.2,h*.16),d*.68),
-        new THREE.MeshLambertMaterial({color:0x0a1117,emissive:color,emissiveIntensity:.14})
-      );
-      cap.position.y = h*.76;
-      g.add(cap);
-
-      if (item.shape === "spire") {
-        const spire = new THREE.Mesh(
-          new THREE.ConeGeometry(1.1,4.6,4),
-          new THREE.MeshLambertMaterial({color:0x06161b,emissive:0x00ffff,emissiveIntensity:.25})
-        );
-        spire.position.y = h*.98;
-        spire.rotation.y = Math.PI/4;
-        g.add(spire);
+      // Layered spandrels and window ribbons read as real facades, not glowing boxes.
+      const floors = Math.max(3,Math.round(bodyHeight/1.65));
+      const facadeY = .42;
+      for (let floor=0;floor<floors;floor++) {
+        const y=facadeY+(floor+.55)*bodyHeight/floors;
+        const floorHeight=bodyHeight/floors;
+        const depth=.12;
+        for (const sign of [-1,1]) {
+          const z=sign*(d/2+.055);
+          solid(g,glassMaterial,w*.81,Math.max(.4,floorHeight*.53),depth,0,y,z);
+          for(let col=-2;col<=2;col++){
+            solid(g,steelMaterial,.09,floorHeight*.65,.18,col*w*.155,y,z+sign*.025);
+          }
+          solid(g,steelMaterial,w+.22,.09,.2,0,y+floorHeight*.35,z);
+          const x=sign*(w/2+.055);
+          solid(g,glassMaterial,.12,Math.max(.4,floorHeight*.48),d*.76,x,y,0);
+          for(let col=-1;col<=1;col++) solid(g,steelMaterial,.16,floorHeight*.65,.11,x+sign*.02,y,col*d*.23);
+        }
       }
 
-      const el = document.createElement("div");
-      el.className = "label3d " + maturityClass(item.maturity);
-      el.innerHTML = '<span class="led"></span>' + item.code + " · " + item.name;
-      const tag = new CSS2DObject(el);
-      tag.position.set(0,h+1.6,0);
-      g.add(tag);
+      // Street-level entrance, canopy, stair and restrained landmark lighting.
+      solid(g,lintelMaterial,w*.43,2.35,.24,0,1.63,d/2+.17);
+      solid(g,glassMaterial,w*.31,1.94,.17,0,1.46,d/2+.32);
+      solid(g,steelMaterial,w*.6,.2,1.35,0,2.85,d/2+.75);
+      for(let step=0;step<3;step++) solid(g,pavementMaterial,w*.55-step*.24,.18,.52,0,.16+step*.14,d/2+2-step*.48);
+      solid(g,accentMat,w*.65,.055,.14,0,3,d/2+.73);
 
-      g.userData = {id:item.id,mat};
+      // Skyline character differs per standards institution.
+      const roofY=.88+bodyHeight;
+      if(item.shape==="spire"){
+        solid(g,steelMaterial,w*.52,2.4,d*.52,0,roofY+1.2,0);
+        const crown = new THREE.Mesh(new THREE.CylinderGeometry(.22,1.8,5,8),steelMaterial);
+        crown.position.y=roofY+4.65;
+        crown.castShadow=true;g.add(crown);
+        const antenna = new THREE.Mesh(new THREE.CylinderGeometry(.04,.09,5.8,8),accentMat);
+        antenna.position.y=roofY+9.8;g.add(antenna);
+      } else {
+        solid(g,steelMaterial,w*.5,1.25,d*.48,0,roofY+.65,0);
+        solid(g,glassMaterial,w*.36,.45,d*.33,0,roofY+1.55,0);
+        for(const sx of [-1,1]) solid(g,accentMat,.09,1.65,.11,sx*w*.34,roofY+.9,d*.22);
+      }
+
+      const el=document.createElement("div");
+      el.className="label3d "+maturityClass(item.maturity);
+      el.textContent=item.code+" · "+item.name;
+      const tag=new CSS2DObject(el);
+      tag.position.set(0,roofY+(item.shape==="spire"?12:4),0);
+      g.add(tag);
+      g.userData={id:item.id,mat:bodyMat};
       return g;
     }
 
