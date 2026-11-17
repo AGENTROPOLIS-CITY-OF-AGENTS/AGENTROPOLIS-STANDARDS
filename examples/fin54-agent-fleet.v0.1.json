@@ -1,0 +1,59 @@
+{
+  "schema_version": "agentropolis.agent-entity/v0.1",
+  "execution_mode": "simulation",
+  "default_authority": "deny",
+  "orchestrator": "Hermes/VERITY",
+  "agents": [
+    {
+      "agent_id": "fin54.market-observation",
+      "domain": "FIN54",
+      "purpose": "Validate market observations",
+      "allowed_capabilities": [
+        "read:fixture-market-data"
+      ],
+      "denied_capabilities": [
+        "trade:execute",
+        "network:egress",
+        "secrets:read"
+      ],
+      "outputs": [
+        "MarketEvidenceCandidate"
+      ]
+    },
+    {
+      "agent_id": "fin54.pattern-evaluation",
+      "domain": "FIN54",
+      "purpose": "Evaluate pattern on evidence",
+      "allowed_capabilities": [
+        "read:validated-market-evidence"
+      ],
+      "denied_capabilities": [
+        "trade:execute",
+        "network:egress",
+        "secrets:read"
+      ],
+      "outputs": [
+        "PatternEvidenceReport"
+      ]
+    },
+    {
+      "agent_id": "fin54.risk-review",
+      "domain": "FIN54",
+      "purpose": "Review simulated exposure",
+      "allowed_capabilities": [
+        "read:pattern-evidence",
+        "read:simulated-risk-policy"
+      ],
+      "denied_capabilities": [
+        "trade:execute",
+        "network:egress",
+        "secrets:read"
+      ],
+      "outputs": [
+        "RiskRecommendation"
+      ]
+    }
+  ],
+  "production_enabled": false,
+  "live_trading_enabled": false
+}
